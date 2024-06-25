@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.upload{
+    width: 100%;
+    height: 57.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(145, 20, 20);
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    background-color: #b99999
+}
+
+.box .yt{
+    background: url(C:\KULIAH\menjadigemas\public\Image\icon1.png) no-repeat scroll 1px 1px;
+    background-size: 100px;
+    background-position: center;
+    padding-left:30px;
+    width: 300px;
+    height: 220px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.box .yt p{
+    margin-top: 10px;
+
+}
+
+.actual-file-input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  
+  .custom-file-input {
+    text-align: center;
+    display: inline;
+    padding: 5px 10px;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 2px solid #dc0b0b;
+    color: #dc0b0b;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .name-input {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #dc0b0b;
+    border-radius: 4px;
+  }
+
+  form{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+  }
