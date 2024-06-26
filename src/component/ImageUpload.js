@@ -8,7 +8,8 @@ function ImageUpload() {
     const [file, setFile] = useState(null)
     const [selectedFileName, setSelectedFileName] = useState('Choose a file');
     const [name, setName] = useState('');
-
+    const [message, setMessage] = useState('');
+    
     const handleFileChange = (event) => {
         const fileName = event.target.files[0]?.name || 'Choose a file';
         setFile(event.target.files[0])
@@ -19,23 +20,41 @@ function ImageUpload() {
         setName(event.target.value);
     };
 
-    const uploadFile = () => {
-        const formData = new FormData()
-        formData.append('file', file)
+    const uploadFile = async () => {
+        if (!file || !name) {
+            setMessage('Please select a file and enter a name.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('image', file);
         formData.append('name', name);
-        fetch('http://localhost:1000/upload', {
-            method:'POST',
-            body:formData
-        })
-        .then(res => console.log(res))
-        .catch(err => console.error(err))
-    }
+
+        try {
+            const response = await fetch('http://localhost:7000/upload', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage('File uploaded successfully');
+            } else {
+                setMessage(`Error uploading file: ${result.message}`);
+            }
+        } catch (err) {
+            console.error(err);
+            setMessage(`Error uploading file: ${err.message}`);
+        }
+    };
+
         
     return (
         <div className="upload">
             <div className='box'>
                 <div className='yt'>
-                    <p></p>
+                    <p> <p>{message}</p></p>
                 </div>
                 <label htmlFor="file-input" className="custom-file-input">
                     {selectedFileName}
