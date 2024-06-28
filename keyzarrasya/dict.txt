@@ -1,0 +1,11 @@
+Honda_HRV
+Mitsubishi_Galant
+Hyundai_Genesis
+Hyundai_IONIQ
+Honda_CRV_Jeep
+Kijang_Innova
+Alphard
+Nissan_Grand_Livina
+MercedesBenz_Sedan
+Suzuki_APV
+Jeep_Cherokee
